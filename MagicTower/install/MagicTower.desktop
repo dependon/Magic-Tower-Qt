@@ -1,0 +1,17 @@
+[Desktop Entry]
+Categories=Application;
+Comment=MagicTower
+Comment[zh_CN]=魔塔
+Encoding=UTF-8
+Exec=MagicTower %F
+GenericName=MagicTower
+GenericName[zh_CN]=魔塔
+Icon=MagicTower
+Name=MagicTower
+Name[zh_CN]=魔塔
+StartupNotify=false
+Terminal=false
+Type=Application
+Version=1.0.0.0
+X-Deepin-ManualID=MagicTower
+X-Deepin-Vendor=user-custom

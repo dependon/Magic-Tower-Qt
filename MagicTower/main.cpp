@@ -10,7 +10,8 @@
 #include <QApplication>
 #include <QMediaPlayer>
 #include <QMediaPlaylist>
-
+#include <QStandardPaths>
+#include <QDir>
 // Declare global varible
 DataBase db;
 Player player;
@@ -21,7 +22,8 @@ int map[14][14][10];
 int mode = 1;
 
 // Main function
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
     QApplication a(argc, argv);
 
     // Add BGM
@@ -33,7 +35,12 @@ int main(int argc, char *argv[]) {
     bgm->play();
 
     // Connect database
-    db.Connect(a.applicationDirPath()  + "/db.sqlite");
+    QString path = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) + "/magictower";
+    QDir dir(path);
+    if (!dir.exists()) {
+        dir.mkdir(path);
+    }
+    db.Connect(path  + "/magictowerdb.sqlite");
 
     // Main window
     MainWindow w;

@@ -35,3 +35,14 @@ HEADERS += mainwindow.h \
 
 RESOURCES += \
     application.qrc
+
+APPSHAREDIR = /usr/share/MagicTower
+unix:!android: target.path = /usr/bin
+
+desktop.path = /usr/share/applications/
+desktop.files = $$PWD/install/MagicTower.desktop
+
+icon.path =/usr/share/icons
+icon.files=$$PWD/install/MagicTower.png
+
+!isEmpty(target.path): INSTALLS += target icon desktop
